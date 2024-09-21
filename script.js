@@ -8,7 +8,7 @@ const idadesAtletas2016 = {
     55: 1, 56: 3, 58: 2, 60: 6, 61: 2, 62: 1
 };
 
-// Função para calcular a diferença de idade
+// Função para calcular a diferença de idade e revelar dados ao clicar no botão
 document.getElementById('submit-age').addEventListener('click', function() {
     const userAge = parseInt(document.getElementById('age').value);
     const rayssaAge = 16; // Idade da Rayssa Leal em 2024
@@ -40,19 +40,14 @@ document.getElementById('reveal-more').addEventListener('click', function() {
         }
     }
 
-    const totalAthletes2016 = Object.values(idadesAtletas2016).reduce((acc, curr) => acc + curr, 0);
-
     // Texto baseado na comparação de atletas mais velhos ou mais jovens
-    let comparisonText2016 = "";
-    if (athletesOlderThanUser2016 > athletesYoungerThanUser2016) {
-        comparisonText2016 = `Como a maioria dos atletas tinha mais idade que você, é provável que você tenha notado menos atletas jovens em destaque em 2016.`;
-    } else {
-        comparisonText2016 = `Em 2016, você provavelmente notou atletas mais jovens em destaque, já que havia mais atletas com menos idade que você.`;
-    }
+    let comparisonText2016 = athletesOlderThanUser2016 > athletesYoungerThanUser2016 
+        ? `Como a maioria dos atletas tinha mais idade que você, é provável que você tenha notado menos atletas jovens em destaque em 2016.` 
+        : `Em 2016, você provavelmente notou atletas mais jovens em destaque, já que havia mais atletas com menos idade que você.`;
 
     document.getElementById('rio-2016').textContent = `Nas Olimpíadas Rio 2016, você tinha ${ageIn2016} anos. ${athletesOlderThanUser2016} atletas eram mais velhos que você, e ${athletesYoungerThanUser2016} eram mais novos. ${comparisonText2016}`;
 
-    // Cálculos para as Olimpíadas de 2004 (Atenas) usando faixas etárias
+    // Cálculos para as Olimpíadas de 2004 (Atenas)
     const ageIn2004 = userAge - 20; // Atenas 2004 foi há 20 anos
 
     // Faixas etárias em 2004
@@ -76,14 +71,15 @@ document.getElementById('reveal-more').addEventListener('click', function() {
     } else if (ageIn2004 >= 26 && ageIn2004 <= 29) {
         percentageOlderAthletes2004 = faixasEtarias2004["30 anos ou mais"];
         percentageSameOrYounger2004 = faixasEtarias2004["18 a 25 anos"] + faixasEtarias2004["Menos que 18 anos"];
-    } else if (ageIn2004 >= 30) {
+    } else {
         percentageOlderAthletes2004 = 0; // Nenhum atleta mais velho
         percentageSameOrYounger2004 = 100; // Todos com a mesma idade ou mais novos
     }
 
     document.getElementById('athens-2004').textContent = `Nas Olimpíadas de Atenas 2004, você tinha ${ageIn2004} anos. ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você, enquanto ${percentageSameOrYounger2004}% tinham idade semelhante ou eram mais jovens.`;
 
-    // Exibir a seção dos atletas com 30 anos ou mais
+    // Revelar as seções
     document.getElementById('athletes-over-30').classList.remove('hidden');
     document.getElementById('previous-years').classList.remove('hidden');
+    document.getElementById('age-trend').classList.remove('hidden'); // Revela também a seção de avanço de idades
 });
