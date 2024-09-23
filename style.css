@@ -7,12 +7,12 @@
 
 /* Corpo da página */
 body {
-    font-family: "Georgia", serif;
+    font-family: Arial, sans-serif; /* Fonte unificada */
     background-color: #f4f4f4;
-      background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148818118.jpg?t=st=1726886123~exp=1726889723~hmac=eaac11ffa281066812cadb592736d5c7b226d9adc833e32912bc62c8816a1f84&w=740');
-    background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148818118.jpg?t=st=1726886123~exp=1726889723~hmac=eaac11ffa281066812cadb592736d5c7b226d9adc833e32912bc62c8816a1f84&w=740');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #333;
     line-height: 1.7;
     padding: 20px;
@@ -27,24 +27,26 @@ article {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Título e subtítulo */
+/* Título principal (H1) */
 header h1 {
-    font-family: "Times New Roman", serif;
-    font-size: 3rem;
+    font-size: 2.5rem; /* Diminui um pouco para harmonizar */
+    font-weight: bold;
     margin-bottom: 10px;
     color: #222;
+    font-family: Arial, sans-serif; /* Unificar fonte */
+    text-align: center; /* Centralizado como em muitos sites de notícias */
 }
 
+/* Subtítulo */
 header .subtitulo {
-    font-family: Arial, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 20px;
     color: #555;
+    text-align: justify;
 }
 
 /* Seção de entrada de idade */
 #input-age {
-    font-family: Arial, sans-serif;
     margin-bottom: 20px;
 }
 
@@ -98,10 +100,11 @@ button:hover {
     font-size: 1.1rem;
 }
 
-/* Título para a seção de Olimpíadas passadas */
-#previous-years h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+/* Títulos h2 com espaçamento adequado */
+h2 {
+    font-size: 1.8rem;
+    margin-top: 30px; /* Espaçamento acima do h2 */
+    margin-bottom: 15px; /* Espaçamento abaixo do h2 */
     color: #333;
 }
 
