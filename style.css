@@ -9,7 +9,8 @@
 body {
     font-family: Arial, sans-serif; /* Fonte unificada */
     background-color: #f4f4f4;
-    background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148818118.jpg?t=st=1726886123~exp=1726889723~hmac=eaac11ffa281066812cadb592736d5c7b226d9adc833e32912bc62c8816a1f84&w=740');
+    background-image: url('paper-style-tennis-match.jpg');
+    #background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148818118.jpg?t=st=1726886123~exp=1726889723~hmac=eaac11ffa281066812cadb592736d5c7b226d9adc833e32912bc62c8816a1f84&w=740');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
