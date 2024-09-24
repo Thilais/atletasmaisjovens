@@ -7,7 +7,7 @@
 
 /* Corpo da página */
 body {
-    font-family: Arial, sans-serif; /* Fonte unificada */
+    font-family: 'Merriweather', serif; /* Fonte unificada */
     background-color: #f4f4f4;
     background-image: url('paper-style-tennis-match.jpg');
     #background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148818118.jpg?t=st=1726886123~exp=1726889723~hmac=eaac11ffa281066812cadb592736d5c7b226d9adc833e32912bc62c8816a1f84&w=740');
@@ -34,16 +34,22 @@ header h1 {
     font-weight: bold;
     margin-bottom: 10px;
     color: #222;
-    font-family: Arial, sans-serif; /* Unificar fonte */
+    font-family: 'Merriweather', serif; /* Unificar fonte */
     text-align: center; /* Centralizado como em muitos sites de notícias */
 }
 
+header {
+    background-color: #2F4F4F;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    
 /* Subtítulo */
 header .subtitulo {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 20px;
-    color: #555;
-    text-align: justify;
+    color: white;
+    text-align: center;
 }
 
 /* Seção de entrada de idade */
@@ -54,7 +60,7 @@ header .subtitulo {
 #input-age .intro {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #545454;
 }
 
 input[type="number"] {
@@ -69,14 +75,14 @@ input[type="number"] {
 button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #007bff;
+    background-color: #545454;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #545454;
 }
 
 /* Resultado do cálculo */
@@ -88,7 +94,7 @@ button:hover {
 .result-text {
     background-color: #f0f0f0;
     padding: 20px;
-    border-left: 5px solid #007bff;
+    border-left: 5px solid #545454;
     margin-bottom: 20px;
 }
 
@@ -96,7 +102,7 @@ button:hover {
 .year-box {
     background-color: #f0f0f0;
     padding: 20px;
-    border-left: 5px solid #007bff;
+    border-left: 5px solid #545454;
     margin-bottom: 20px;
     font-size: 1.1rem;
 }
