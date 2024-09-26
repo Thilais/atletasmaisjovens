@@ -3,17 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border-radius: 15px;
+    
 }
 
 /* Corpo da página */
 body {
-    font-family: Arial, sans-serif; /* Fonte unificada */
+    font-family: 'Poppins', serif;
     background-color: #f4f4f4;
-    background-image: url('paper-style-tennis-match.jpg');
-    #background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148818118.jpg?t=st=1726886123~exp=1726889723~hmac=eaac11ffa281066812cadb592736d5c7b226d9adc833e32912bc62c8816a1f84&w=740');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: url('879.jpg');
     color: #333;
     line-height: 1.7;
     padding: 20px;
@@ -21,68 +19,79 @@ body {
 
 /* Layout da matéria */
 article {
-    max-width: 900px;
+    max-width: 1020px;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(2, 2, 2);
     padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(238, 231, 231, 0.1);
+    color:#f0f0f0;
+    
 }
 
-/* Título principal (H1) */
+
+/* Título principal */
 header h1 {
-    font-size: 2.5rem; /* Diminui um pouco para harmonizar */
+    font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #222;
-    font-family: Arial, sans-serif; /* Unificar fonte */
-    text-align: center; /* Centralizado como em muitos sites de notícias */
+    color:azure;
+    text-align: center;
+    opacity: 0.9;
 }
 
 /* Subtítulo */
 header .subtitulo {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #555;
+    color: #c7c5c5;
     text-align: justify;
 }
 
 /* Seção de entrada de idade */
 #input-age {
     margin-bottom: 20px;
+    
 }
 
 #input-age .intro {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #8ec0f5;
+
 }
 
 input[type="number"] {
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 100%;
     max-width: 300px;
-    border: 1px solid #ddd;
+    border: 2px solid #007bff;
     margin-bottom: 15px;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 12px 24px;
+    font-size: 1.1rem;
     background-color: #007bff;
     color: white;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Poppins', serif;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Resultado do cálculo */
 #result {
     margin-top: 20px;
     font-size: 1.1rem;
+    transition: opacity 0.5s ease-in-out;
+    color:#3978bb;
 }
 
 .result-text {
@@ -95,25 +104,19 @@ button:hover {
 /* Estilos das caixas para Rio 2016 e Atenas 2004 */
 .year-box {
     background-color: #f0f0f0;
+    color:#0056b3;
     padding: 20px;
     border-left: 5px solid #007bff;
     margin-bottom: 20px;
     font-size: 1.1rem;
 }
 
-/* Títulos h2 com espaçamento adequado */
-h2 {
+/* Títulos com espaçamento adequado */
+h2, h3 {
     font-size: 1.8rem;
-    margin-top: 30px; /* Espaçamento acima do h2 */
-    margin-bottom: 15px; /* Espaçamento abaixo do h2 */
-    color: #333;
-}
-/* Títulos h3 com espaçamento adequado */
-h3 {
-    font-size: 1.8rem;
-    margin-top: 30px; /* Espaçamento acima do h3 */
-    margin-bottom: 15px; /* Espaçamento abaixo do h3 */
-    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #3978bb;
 }
 
 /* Esconder inicialmente */
@@ -121,7 +124,7 @@ h3 {
     display: none;
 }
 
-/* Rodapé da matéria */
+/* Rodapé */
 footer {
     text-align: center;
     margin-top: 40px;
