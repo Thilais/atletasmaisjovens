@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atletas Olímpicos estão mais jovens?</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <article>
         <header>
             <h1>Atletas olímpicos estão mais jovens?</h1>
-            <p class="subtitulo">Os Jogos Olímpicos de Paris 2024 trouxeram à tona uma nova geração de atletas que parecem mais jovens a cada edição. Rayssa Leal, 16 anos, medalhista de prata no skate em 2020 e agora medalhista de bronze em 2024, é um exemplo notável. A chinesa Zheng Haohao, com apenas 11 anos, também se destacou como a atleta mais jovem das últimas edições. Mas, será que isso reflete uma mudança no perfil dos atletas olímpicos? Vamos analisar juntos.</p>
+            <p class="subtitulo">
+                Os Jogos Olímpicos de Paris 2024 trouxeram à tona uma nova geração de atletas, que parecem mais jovens a cada edição. Rayssa Leal, medalhista de bronze nos últimos Jogos Olímpicos, foi medalhista de prata no skate em 2020, aos 13 anos, tornando-se a brasileira mais jovem a subir no pódio olímpico. A chinesa Zheng Haohao, com apenas 11 anos, também se destacou como a atleta mais jovem das últimas edições. Mas, será que isso reflete uma mudança no perfil dos atletas olímpicos? Vamos analisar juntos.
+            </p>
         </header>
 
         <section id="input-age">
@@ -21,50 +23,62 @@
         </section>
 
         <section id="result" class="hidden">
-            <p class="result-text">Em Paris 2024, você tem <span id="age-difference"></span> anos a mais que Rayssa Leal, que tinha 16 anos. Essa diferença de idade pode influenciar sua percepção ao assistir aos Jogos, onde atletas jovens podem se destacar mais ou menos para você.</p>
-            
+            <p class="result-text"></p> <!-- Deixe o parágrafo vazio -->
             <button id="reveal-more">E como será que eram nos anos anteriores? Clique para descobrir</button>
         </section>
+        
+        <section id="previous-years" class="hidden">
+            <h3>Olimpíadas passadas: Rio 2016 e Atenas 2004</h3>
+            <div class="year-box">
+                <p id="rio-2016"></p>
+            </div>
+            <div class="year-box">
+                <p id="athens-2004"></p>
+            </div>
+        </section>
 
-       <section id="previous-years" class="hidden">
-    <h3>Olimpíadas passadas: Rio 2016 e Atenas 2004</h2>
-    <div class="year-box">
-        <p id="rio-2016"></p>
-    </div>
-    <div class="year-box">
-        <p id="athens-2004"></p>
-    </div>
+        <section id="age-trend" class="hidden">
+            <h3>O avanço de idades dos atletas olímpicos por faixa etária</h3>
+            <p>
+                Os dados mostram uma tendência interessante quando analisamos a distribuição por faixa etária entre as edições de 1980 e 2016. Ao contrário do que muitos podem imaginar, os atletas olímpicos não estão ficando mais jovens. Pelo contrário, a participação de competidores com mais de 30 anos tem aumentado, enquanto o número de atletas com menos de 18 anos está em queda. Um exemplo disso é Juan Antonio Jimenez Cobo, da Espanha, que, aos 65 anos, é o atleta mais velho competindo em Paris. Ele fez sua estreia nos Jogos Olímpicos em Sydney-2000, aos 41 anos.
+            </p>
+            <div class="flourish-embed flourish-chart" data-src="visualisation/19493440">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+                <noscript><img src="https://public.flourish.studio/visualisation/19493440/thumbnail" width="100%" alt="chart visualization" /></noscript>
+            </div>
 
-    <section id="age-trend" class="hidden">
-        <h3>O avanço de idades dos atletas olímpicos por faixa etária </h3>
-        <p>Os dados mostram uma tendência interessante quando analisamos a distribuição por faixa etária entre as edições de 1980 e 2016. Ao contrário do que muitos podem imaginar, os atletas olímpicos não estão ficando mais jovens. Pelo contrário, a participação de competidores com mais de 30 anos tem aumentado, enquanto o número de atletas com menos de 18 anos está em queda. Um exemplo disso é Juan Antonio Jimenez Cobo, da Espanha, que, aos 65 anos, é o atleta mais velho competindo em Paris. Ele fez sua estreia nos Jogos Olímpicos em Sydney-2000, aos 41 anos. </p>
-        <div class="flourish-embed flourish-chart" data-src="visualisation/19493440">
-            <script src="https://public.flourish.studio/resources/embed.js"></script>
-            <noscript><img src="https://public.flourish.studio/visualisation/19493440/thumbnail" width="100%" alt="chart visualization" /></noscript>
-        </div>
-       
-
- <p>
-    Mas por que, então, temos essa percepção contrária? Nossas mentes podem nos enganar, especialmente porque interpretamos o mundo através das nossas próprias experiências. A surpresa em relação à Rayssa em 2024 pode ser explicada pelo fato de que, à medida que envelhecemos, começamos a notar mais acentuadamente as diferenças de idade. Em 2016 e 2004, quando éramos mais jovens, é possível que outras "Rayssas" tenham se destacado, mas não chamaram tanto a nossa atenção. Essa reflexão nos leva a questionar: será que os atletas estão ficando mais jovens, ou somos nós que estamos envelhecendo? <del>crise existencial</del> </p>
-
-    </section>
-</section>
+            <p>
+                Mas por que, então, temos essa percepção contrária? Nossas mentes podem nos enganar, especialmente porque interpretamos o mundo através das nossas próprias experiências. A surpresa em relação à Rayssa em 2024 pode ser explicada pelo fato de que, à medida que envelhecemos, começamos a notar mais acentuadamente as diferenças de idade. Se você tem entre 20 e 30 anos, esse experimento deve ter sido especialmente revelador, porque fica mais evidente o impacto da idade no nosso ponto de vista. Em 2016 e 2004, quando éramos mais jovens, é possível que outras "Rayssas" tenham se destacado, mas não chamaram tanto a nossa atenção. Essa reflexão nos leva a questionar: será que os atletas estão ficando mais jovens, ou somos nós que estamos envelhecendo? <del>crise existencial</del>
+            </p>
+        </section>
 
         <section id="athletes-over-30" class="hidden">
-            <h2>Mudança no Percentual de Atletas Sub-25: Um Olhar Global </h2>
-            <p>À medida que discutimos a presença crescente de jovens atletas nas Olimpíadas, é essencial analisar os dados sobre a faixa etária dos competidores. O mapa a seguir apresenta a mudança no percentual de atletas com menos de 25 anos entre as edições de 2004 e 2016. Esse recorte oferece uma perspectiva sobre como a composição etária das equipes olímpicas está se transformando e quais países estão mais propensos a incluir jovens talentos em suas delegações..</p>
-<div class="flourish-embed flourish-map" data-src="visualisation/19520401"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/19520401/thumbnail" width="100%" alt="map visualization" /></noscript></div>
+            <h2>Variação Percentual de Atletas Sub-25: Um Olhar Global</h2>
+            <p>
+                À medida que discutimos a presença crescente de jovens atletas nas Olimpíadas, é essencial analisar os dados sobre a faixa etária dos competidores. O mapa a seguir apresenta a mudança no percentual de atletas com menos de 25 anos entre as edições de 2004 e 2016. Esse recorte oferece uma perspectiva sobre como a composição etária das equipes olímpicas está se transformando e quais países estão mais propensos a incluir jovens talentos em suas delegações.
+            </p>
+            <div class="flourish-embed flourish-map" data-src="visualisation/19520401">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+                <noscript><img src="https://public.flourish.studio/visualisation/19520401/thumbnail" width="100%" alt="map visualization" /></noscript>
+            </div>
 
-            <p>Os dados revelam que a maioria dos países (65%) apresentou variações modestas, com mudanças de até 20% na participação de atletas sub-25. No entanto, 23% dos países registraram uma redução superior a 20% nesse grupo etário, enquanto apenas 12% notaram um aumento significativo. Essas variações podem refletir a diversidade nas abordagens dos países em relação ao desenvolvimento de jovens atletas, sugerindo que, embora a presença juvenil seja visível, ela não está se expandindo de forma uniforme no cenário olímpico.</p>
+            <p>
+                Os dados revelam que a maioria dos países (65%) apresentou variações modestas, com mudanças de até 20% na participação de atletas sub-25. No entanto, 23% dos países registraram uma redução superior a 20% nesse grupo etário, enquanto apenas 12% notaram um aumento significativo. Essas variações podem refletir a diversidade nas abordagens dos países em relação ao desenvolvimento de jovens atletas, sugerindo que, embora a presença juvenil seja visível, ela não está se expandindo de forma uniforme no cenário olímpico.
+            </p>
 
-          <h3> Reflexões sobre a passagem do tempo e a trajetória dos atletas</h3>
+            <h3>Reflexões sobre a passagem do tempo e a trajetória dos atletas</h3>
 
-<p> Ao analisarmos os dados das últimas edições das Olimpíadas, fica evidente que o envelhecimento não afeta apenas nossa percepção de mundo, mas também como nos relacionamos com os feitos esportivos. O que antes poderia passar despercebido, como o sucesso de atletas jovens, hoje nos chama atenção à medida que o intervalo entre suas idades e as nossas cresce. A própria evolução nas idades dos atletas reflete mudanças no esporte, que hoje acolhe uma gama mais diversa de faixas etárias, permitindo que atletas com mais de 30 anos continuem a competir em alto nível.</p>
+            <p>
+                Ao analisarmos os dados das últimas edições das Olimpíadas, fica evidente que o envelhecimento não afeta apenas nossa percepção de mundo, mas também como nos relacionamos com os feitos esportivos. O que antes poderia passar despercebido, como o sucesso de atletas jovens, hoje nos chama atenção à medida que o intervalo entre suas idades e as nossas cresce. A própria evolução nas idades dos atletas reflete mudanças no esporte, que hoje acolhe uma gama mais diversa de faixas etárias, permitindo que atletas com mais de 30 anos continuem a competir em alto nível.
+            </p>
 
-<p> À medida que nos questionamos sobre o futuro e a participação dos jovens no cenário olímpico, somos lembrados de que o esporte, assim como a vida, é cíclico. Assim, novos nomes surgem para inspirar as gerações que estão por vir, enquanto aqueles que já fizeram história permanecem como lembranças de que a juventude e a experiência podem coexistir nas maiores arenas do mundo. </p>
+            <p>
+                À medida que nos questionamos sobre o futuro e a participação dos jovens no cenário olímpico, somos lembrados de que o esporte, assim como a vida, é cíclico. Assim, novos nomes surgem para inspirar as gerações que estão por vir, enquanto aqueles que já fizeram história permanecem como lembranças de que a juventude e a experiência podem coexistir nas maiores arenas do mundo.
+            </p>
 
-<p> O tempo passa, tanto para nós quanto para os atletas, mas o espírito olímpico continua a nos inspirar com sua capacidade de unir diferentes idades, histórias e sonhos em uma única jornada.</p>
-          
+            <p>
+                O tempo passa, tanto para nós quanto para os atletas, mas o espírito olímpico continua a nos inspirar com sua capacidade de unir diferentes idades, histórias e sonhos em uma única jornada.
+            </p>
         </section>
     </article>
 
