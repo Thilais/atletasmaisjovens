@@ -114,7 +114,7 @@ if (ageIn2004 < 0) {
 } else if (ageIn2004 >= 18 && ageIn2004 <= 25) {
     percentageOlderAthletes2004 = faixasEtarias2004["26 a 29 anos"] + faixasEtarias2004["30 anos ou mais"];
     percentageSameOrYounger2004 = faixasEtarias2004["18 a 25 anos"];
-    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, que era a faixa etária mais comum entre os atletas, mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
+    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e estava na faixa etária mais comum dos atletas dessa edição (entre 18 e 25 anos), mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
 } else if (ageIn2004 >= 26 && ageIn2004 <= 29) {
     percentageOlderAthletes2004 = faixasEtarias2004["30 anos ou mais"];
     percentageSameOrYounger2004 = faixasEtarias2004["18 a 25 anos"];
