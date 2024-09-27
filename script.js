@@ -104,25 +104,25 @@ const formatAge = (age) => age === 1 ? "1 ano" : `${age} anos`;
 if (ageIn2004 < 0) {
     message2004 = "Você não tinha nascido em 2004.";
 } else if (ageIn2004 >= 0 && ageIn2004 < 8) {
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, era muito jovem para se lembrar, e todos os atletas eram mais velhos que você.`;
+    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, era muito jovem para se lembrar dos Jogos de Atenas, e todos os atletas eram mais velhos que você.`;
 } else if (ageIn2004 >= 8 && ageIn2004 < 13) {
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, e era menos idade que todos os atletas.`;
+    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, ou seja, menos idade que todos os atletas da edição Atenas 2004.`;
 } else if (ageIn2004 >= 13 && ageIn2004 < 18) {
     percentageOlderAthletes2004 = 100; // Quase todos mais velhos que você
     percentageSameOrYounger2004 = 0;
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, uma idade semelhante aos atletas mais jovens, mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
+    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, uma idade semelhante aos atletas mais jovens, mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
 } else if (ageIn2004 >= 18 && ageIn2004 <= 25) {
     percentageOlderAthletes2004 = faixasEtarias2004["26 a 29 anos"] + faixasEtarias2004["30 anos ou mais"];
     percentageSameOrYounger2004 = faixasEtarias2004["18 a 25 anos"];
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, que era a faixa etária mais comum entre os atletas, mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
+    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, que era a faixa etária mais comum entre os atletas, mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
 } else if (ageIn2004 >= 26 && ageIn2004 <= 29) {
     percentageOlderAthletes2004 = faixasEtarias2004["30 anos ou mais"];
     percentageSameOrYounger2004 = faixasEtarias2004["18 a 25 anos"];
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, e mais atletas eram mais novos que você.`;
+    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e mais atletas eram mais novos que você.`;
 } else if (ageIn2004 >= 30) {
     percentageOlderAthletes2004 = 0;
     percentageSameOrYounger2004 = 100;
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, e apenas 20% dos atletas eram mais velhos que você.`;
+    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e apenas 20% dos atletas eram mais velhos que você.`;
 }
 
 // Exibir a mensagem final na tela
