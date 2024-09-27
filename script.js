@@ -106,7 +106,7 @@ if (ageIn2004 < 0) {
 } else if (ageIn2004 >= 0 && ageIn2004 < 8) {
     message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, era muito jovem para se lembrar, e todos os atletas eram mais velhos que você.`;
 } else if (ageIn2004 >= 8 && ageIn2004 < 13) {
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, e era mais novo que todos os atletas.`;
+    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, e era menos idade que todos os atletas.`;
 } else if (ageIn2004 >= 13 && ageIn2004 < 18) {
     percentageOlderAthletes2004 = 100; // Quase todos mais velhos que você
     percentageSameOrYounger2004 = 0;
