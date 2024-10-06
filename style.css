@@ -131,3 +131,17 @@ footer {
     font-size: 0.9rem;
     color: #777;
 }
+
+/* Estilo do canvas para os gráficos */
+#chartRio2016, #chartAtenas2004 {
+    width: 100%;   
+    height: 300px; /* Ajustando para um tamanho menor */
+    max-height: 300px; /* Tamanho máximo para evitar que fiquem grandes demais */
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 600px) {
+    #chartRio2016, #chartAtenas2004 {
+        height: 250px; /* Altura menor em telas menores */
+    }
+}
