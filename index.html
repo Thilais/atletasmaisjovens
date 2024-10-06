@@ -6,13 +6,17 @@
     <title>Atletas Olímpicos estão mais jovens?</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" defer></script>
+    <script src="script.js" defer></script>
+
+
 </head>
 <body>
     <article>
         <header>
             <h1>Atletas olímpicos estão mais jovens?</h1>
             <p class="subtitulo">
-                Os Jogos Olímpicos de Paris 2024 destacaram uma nova geração de atletas. Rayssa Leal, medalhista de bronze nas últimas Olimpíadas, ganhou prata no skate em 2020, aos 13 anos, tornando-se a brasileira mais jovem a subir no pódio olímpico. A atleta chinesa Zheng Haohao, com apenas 11 anos, também brilhou como a mais jovem das últimas edições. Será que isso aponta para uma mudança no perfil dos atletas olímpicos?
+                Rayssa Leal, que ganhou prata no skate aos 13 anos em 2020, e Zheng Haohao, de apenas 11, foram destaques como as mais jovens atletas em edições recentes dos Jogos Olímpicos. Será que isso indica uma mudança no perfil dos competidores olímpicos? Vamos analisar juntos.    
             </p>
         </header>
 
@@ -24,17 +28,22 @@
 
         <section id="result" class="hidden">
             <p class="result-text"></p> <!-- Deixe o parágrafo vazio -->
-            <button id="reveal-more">E como será que eram nos anos anteriores? Clique para descobrir</button>
+            <p>E como será que eram nos anos anteriores?</p>
+            <button id="reveal-more">Clique para descobrir</button>
         </section>
+
         
         <section id="previous-years" class="hidden">
             <h3>Olimpíadas passadas: Rio 2016 e Atenas 2004</h3>
             <div class="year-box">
                 <p id="rio-2016"></p>
+                <canvas id="chartRio2016" width="400" height="200"></canvas>
             </div>
             <div class="year-box">
                 <p id="athens-2004"></p>
+                <canvas id="chartAtenas2004" width="400" height="200"></canvas>
             </div>
+            <p>Ao comparar sua idade em diferentes anos olímpicos, você pôde perceber como o ponto de vista muda ao longo do tempo: o que antes parecia ser uma geração de atletas mais velhos, agora, para muitos, dá lugar a jovens prodígios. No decorrer desta matéria, vamos explorar ainda mais essa transformação no perfil etário dos atletas, revelando tendências que refletem a evolução do esporte e também de nossa própria forma de enxergá-lo.</p>
         </section>
 
         <section id="age-trend" class="hidden">
