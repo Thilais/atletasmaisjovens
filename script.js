@@ -8,6 +8,12 @@ const idadesAtletas2016 = {
     55: 1, 56: 3, 58: 2, 60: 6, 61: 2, 62: 1
 };
 
+let myChartRio2016;
+let myChartAtenas2004;
+
+// Função para ajustar o plural ou singular de "anos"
+const formatAge = (age) => age === 1 ? "1 ano" : `${age} anos`;
+
 // Função para calcular a diferença de idade e revelar dados ao clicar no botão
 document.getElementById('submit-age').addEventListener('click', function() {
     const userAge = parseInt(document.getElementById('age').value);
@@ -59,77 +65,130 @@ document.getElementById('reveal-more').addEventListener('click', function() {
         }
     }
 
-    // Condições para diferentes idades em 2016
-    let message2016 = '';
+    // Exibir o texto personalizado antes do gráfico
+    const rioText = `Em 2016, você tinha ${formatAge(ageIn2016)}. Aqui está a comparação entre atletas mais velhos e mais novos que você nos Jogos Olímpicos do Rio 2016:`;
+    document.getElementById('rio-2016').textContent = rioText;
 
-    if (ageIn2016 === 25) {
-        message2016 = `Nas Olimpíadas Rio 2016, você tinha ${ageIn2016} anos. ${athletesOlderThanUser2016} atletas eram mais velhos que você, e ${athletesYoungerThanUser2016} eram mais novos. Uma quantidade equilibrada para ambos os lados, o que pode ter te feito nem cogitar olhar criticamente para a idade dos atletas.`;
-    } else if (ageIn2016  >= 23 && ageIn2016 <= 24) {
-        message2016 = `Nas Olimpíadas Rio 2016, você tinha ${ageIn2016} anos. ${athletesOlderThanUser2016} atletas eram mais velhos que você, e ${athletesYoungerThanUser2016} eram mais novos. Como a maioria dos atletas tinham mais idade que você, é provável que não tenha se destacado para você a pouca idade de parte dos competidores dessa edição, considerando que você tem uma idade muito próxima da média de idade dos atletas.`;
-    } else if (ageIn2016 >= 18 && ageIn2016 <= 22) {
-        message2016 = `Nas Olimpíadas Rio 2016, você tinha ${ageIn2016} anos. ${athletesOlderThanUser2016} atletas eram mais velhos que você, e ${athletesYoungerThanUser2016} eram mais novos. Como a grande maioria dos atletas tinham mais idade que você, é provável que não tenha se destacado para você a pouca idade de parte dos competidores dessa edição, considerando que você tem uma idade muito próxima da média de idade dos atletas.`;
-    } else if (ageIn2016 >= 13 && ageIn2016 <= 17) {
-        message2016 = `Nas Olimpíadas Rio 2016, você tinha ${ageIn2016} anos. ${athletesOlderThanUser2016} atletas eram mais velhos que você, e ${athletesYoungerThanUser2016} eram mais novos. A maioria esmagadora dos atletas tinham mais idade que você, é provável que não tenha se destacado para você a pouca idade de parte dos competidores dessa edição, considerando que você também tinha pouca idade.`;
-    } else if (ageIn2016 >= 26 && ageIn2016 <= 61) {
-        message2016 = `Nas Olimpíadas Rio 2016, você tinha ${ageIn2016} anos. ${athletesOlderThanUser2016} atletas eram mais velhos que você, e você tinha mais idade que uma parcela considerável de atletas, ${athletesYoungerThanUser2016} eram mais novos. Você deve ter sido ainda mais impactado pelo destaque que Rayssa Leal teve nessa edição.`;
-    } else if (ageIn2016 >= 62) {
-        message2016 = `Nas Olimpíadas Rio 2016, você tinha ${ageIn2016} anos. Você tinha mais idade que todos atletas, ${athletesYoungerThanUser2016} eram mais novos. Você deve ter sido ainda mais impactado pelo destaque que Rayssa Leal teve nessa edição.`;
-    } else if (ageIn2016 <= 12) {
-        message2016 = `Nas Olimpíadas Rio 2016, você tinha poucos anos de vida ou nem tinha nascido.`;
+    // Verificar e destruir o gráfico anterior, se existir
+    if (myChartRio2016) {
+        myChartRio2016.destroy();
     }
 
-    // Exibir a mensagem sobre os Jogos Rio 2016
-    document.getElementById('rio-2016').textContent = message2016;
+    const ctxRio = document.getElementById('chartRio2016').getContext('2d');
+    myChartRio2016 = new Chart(ctxRio, {
+        type: 'bar',
+        data: {
+            labels: ['Mais Velhos', 'Mais Novos'],
+            datasets: [{
+                label: '', // Remover o texto "Número de Atletas"
+                data: [athletesOlderThanUser2016, athletesYoungerThanUser2016],
+                backgroundColor: ['#007bff', '#28a745'],
+                borderColor: ['#0056b3', '#218838'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y', // Transforma o gráfico em horizontal
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false, // Remover a legenda
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return `${tooltipItem.label}: ${tooltipItem.raw}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 
+    // Cálculos para as Olimpíadas de 2004 (Atenas)
+    const ageIn2004 = userAge - 20; // Atenas 2004 foi há 20 anos
+    let message2004 = '';
 
-// Cálculos para as Olimpíadas de 2004 (Atenas)
-const ageIn2004 = userAge - 20; // Atenas 2004 foi há 20 anos
+    const faixasEtarias2004 = {
+        "Entre 13 e 18 anos": 2.4,
+        "18 a 25 anos": 46.0,
+        "26 a 29 anos": 28.6,
+        "30 anos ou mais": 22.9
+    };
 
-// Faixas etárias em 2004
-const faixasEtarias2004 = {
-    "Entre 13 e 18 anos": 2.4,
-    "18 a 25 anos": 46.0,
-    "26 a 29 anos": 28.6,
-    "30 anos ou mais": 22.9
-};
+    // Mensagens personalizadas com base na idade em 2004
+    if (ageIn2004 < 0) { 
+        message2004 = "Você não tinha nascido em 2004.";
+    } else if (ageIn2004 >= 0 && ageIn2004 < 8) {
+        message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, era muito jovem para se lembrar dos Jogos de Atenas, e todos os atletas eram mais velhos que você.`;
+    } else if (ageIn2004 >= 8 && ageIn2004 < 13) {
+        message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, ou seja, menos idade que todos os atletas da edição Atenas 2004.`;
+    } else if (ageIn2004 >= 13 && ageIn2004 < 18) {
+        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, uma idade semelhante aos atletas mais jovens, mas ${faixasEtarias2004["Entre 13 e 18 anos"]}% dos atletas eram mais velhos que você.`;
+    } else if (ageIn2004 >= 18 && ageIn2004 <= 25) {
+        const percentageOlderAthletes = faixasEtarias2004["26 a 29 anos"] + faixasEtarias2004["30 anos ou mais"];
+        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e estava na faixa etária mais comum dos atletas dessa edição (entre 18 e 25 anos), mas ${percentageOlderAthletes.toFixed(1)}% dos atletas eram mais velhos que você.`;
+    } else if (ageIn2004 >= 26 && ageIn2004 <= 29) {
+        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e mais atletas eram mais novos que você.`;
+    } else if (ageIn2004 >= 30) {
+        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e apenas ${faixasEtarias2004["30 anos ou mais"]}% dos atletas eram mais velhos que você.`;
+    }
 
-let percentageOlderAthletes2004;
-let percentageSameOrYounger2004;
-let message2004 = "";
+    // Exibir o texto personalizado antes do gráfico
+    document.getElementById('athens-2004').textContent = message2004;
 
-// Função para ajustar o plural ou singular de "anos"
-const formatAge = (age) => age === 1 ? "1 ano" : `${age} anos`;
+    // Verificar e destruir o gráfico anterior, se existir
+    if (myChartAtenas2004) {
+        myChartAtenas2004.destroy();
+    }
 
-// Definindo a faixa etária do usuário em 2004 e a resposta
-if (ageIn2004 < 0) {
-    message2004 = "Você não tinha nascido em 2004.";
-} else if (ageIn2004 >= 0 && ageIn2004 < 8) {
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, era muito jovem para se lembrar dos Jogos de Atenas, e todos os atletas eram mais velhos que você.`;
-} else if (ageIn2004 >= 8 && ageIn2004 < 13) {
-    message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, ou seja, menos idade que todos os atletas da edição Atenas 2004.`;
-} else if (ageIn2004 >= 13 && ageIn2004 < 18) {
-    percentageOlderAthletes2004 = 100; // Quase todos mais velhos que você
-    percentageSameOrYounger2004 = 0;
-    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, uma idade semelhante aos atletas mais jovens, mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
-} else if (ageIn2004 >= 18 && ageIn2004 <= 25) {
-    percentageOlderAthletes2004 = faixasEtarias2004["26 a 29 anos"] + faixasEtarias2004["30 anos ou mais"];
-    percentageSameOrYounger2004 = faixasEtarias2004["18 a 25 anos"];
-    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e estava na faixa etária mais comum dos atletas dessa edição (entre 18 e 25 anos), mas ${percentageOlderAthletes2004}% dos atletas eram mais velhos que você.`;
-} else if (ageIn2004 >= 26 && ageIn2004 <= 29) {
-    percentageOlderAthletes2004 = faixasEtarias2004["30 anos ou mais"];
-    percentageSameOrYounger2004 = faixasEtarias2004["18 a 25 anos"];
-    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e mais atletas eram mais novos que você.`;
-} else if (ageIn2004 >= 30) {
-    percentageOlderAthletes2004 = 0;
-    percentageSameOrYounger2004 = 100;
-    message2004 = `No jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e apenas 20% dos atletas eram mais velhos que você.`;
-}
-
-// Exibir a mensagem final na tela
-document.getElementById('athens-2004').textContent = message2004;
+    const ctxAtenas = document.getElementById('chartAtenas2004').getContext('2d');
+    myChartAtenas2004 = new Chart(ctxAtenas, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(faixasEtarias2004),
+            datasets: [{
+                label: 'Percentual de Atletas',
+                data: Object.values(faixasEtarias2004),
+                backgroundColor: ['#007bff', '#28a745', '#ffcc00', '#dc3545'],
+                borderColor: ['#0056b3', '#218838', '#e6b800', '#c82333'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false, // Remover a legenda
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return `${tooltipItem.label}: ${tooltipItem.raw.toFixed(1)}%`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    max: 100 // Percentual máximo de 100%
+                }
+            }
+        }
+    });
 
     // Revelar as seções
-    document.getElementById('athletes-over-30').classList.remove('hidden');
     document.getElementById('previous-years').classList.remove('hidden');
-    document.getElementById('age-trend').classList.remove('hidden'); // Revela também a seção de avanço de idades
+    document.getElementById('age-trend').classList.remove('hidden');
+    document.getElementById('athletes-over-30').classList.remove('hidden');
 });
