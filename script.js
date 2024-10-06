@@ -116,7 +116,7 @@ document.getElementById('reveal-more').addEventListener('click', function() {
     let message2004 = '';
 
     const faixasEtarias2004 = {
-        "Entre 13 e 18 anos": 2.4,
+        "Entre 13 e 17 anos": 2.4,
         "18 a 25 anos": 46.0,
         "26 a 29 anos": 28.6,
         "30 anos ou mais": 22.9
@@ -130,14 +130,14 @@ document.getElementById('reveal-more').addEventListener('click', function() {
     } else if (ageIn2004 >= 8 && ageIn2004 < 13) {
         message2004 = `Em 2004, você tinha ${formatAge(ageIn2004)}, ou seja, menos idade que todos os atletas da edição Atenas 2004.`;
     } else if (ageIn2004 >= 13 && ageIn2004 < 18) {
-        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, uma idade semelhante aos atletas mais jovens, mas ${faixasEtarias2004["Entre 13 e 18 anos"]}% dos atletas eram mais velhos que você.`;
+        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, uma idade semelhante aos atletas mais jovens, apenas ${faixasEtarias2004["Entre 13 e 17 anos"]}% dos atletas tinham entre 13 e 17 anos, ou seja, a maioria dos competidores eram mais velhos que você.`;
     } else if (ageIn2004 >= 18 && ageIn2004 <= 25) {
         const percentageOlderAthletes = faixasEtarias2004["26 a 29 anos"] + faixasEtarias2004["30 anos ou mais"];
         message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e estava na faixa etária mais comum dos atletas dessa edição (entre 18 e 25 anos), mas ${percentageOlderAthletes.toFixed(1)}% dos atletas eram mais velhos que você.`;
     } else if (ageIn2004 >= 26 && ageIn2004 <= 29) {
         message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e mais atletas eram mais novos que você.`;
     } else if (ageIn2004 >= 30) {
-        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e apenas ${faixasEtarias2004["30 anos ou mais"]}% dos atletas eram mais velhos que você.`;
+        message2004 = `Nos Jogos de Atenas 2004, você tinha ${formatAge(ageIn2004)}, e apenas ${faixasEtarias2004["30 anos ou mais"]}% dos atletas tinham sua idade ou mais.`;
     }
 
     // Exibir o texto personalizado antes do gráfico
